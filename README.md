@@ -6,8 +6,8 @@ Minimal reproduction for a Vite SSR webworker build gap that survives the fix in
 ## Repro
 
 ```bash
-pnpm install
-pnpm build          # uses vite.config.js
+npm install
+npm run build          # uses vite.config.js
 cat dist/entry.js
 ```
 
@@ -31,7 +31,7 @@ it is invoked with an **empty `external`**, so it converts nothing.
 Pass the node builtins / resolved externals to the plugin:
 
 ```bash
-pnpm build --config vite.config.fix.js
+npx vite build --config vite.config.fix.js
 cat dist-fixed/entry.js
 ```
 
